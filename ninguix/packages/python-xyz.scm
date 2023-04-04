@@ -34,7 +34,7 @@
              (file-name (git-file-name name version))
              (sha256
               (base32
-               "03mp0q0rzm6ybzm3fsf27v0ykqfhxjvgp6piis7qndjcxigvx21w"))))
+               "0fdjgapxs4byimgnwiprqxrl9yn3bzxsf96bzh3i72a06rhndakx"))))
     (build-system python-build-system)
     (propagated-inputs (list python-xdg ghostscript moreutils))
     (home-page "https://github.com/ning-y/nu")
