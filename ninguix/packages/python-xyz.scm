@@ -25,7 +25,7 @@
 (define-public python-nu
   (package
     (name "python-nu")
-    (version "0.0.1")
+    (version "0.0.2")
     (source (origin
              (method git-fetch)
              (uri (git-reference
@@ -34,7 +34,7 @@
              (file-name (git-file-name name version))
              (sha256
               (base32
-               "0fdjgapxs4byimgnwiprqxrl9yn3bzxsf96bzh3i72a06rhndakx"))))
+               "0h4ycz9kvpwfi9wx8f8wp29amvvycwg8ccri32abg02b1z01n1id"))))
     (build-system python-build-system)
     (propagated-inputs (list python-xdg ghostscript moreutils))
     (home-page "https://github.com/ning-y/nu")
