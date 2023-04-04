@@ -1,6 +1,9 @@
 (define-module (ninguix packages python-xyz)
+  #:use-module (guix git-download)
   #:use-module (guix download)
   #:use-module (guix build-system python)
+  #:use-module (gnu packages moreutils)
+  #:use-module (gnu packages ghostscript)
   #:use-module (guix packages))
 
 (define-public python-xdg
@@ -17,4 +20,24 @@
     (home-page "https://github.com/srstevenson/xdg-base-dirs")
     (synopsis "Variables defined by the XDG Base Directory Specification")
     (description "Variables defined by the XDG Base Directory Specification")
+    (license #f)))
+
+(define-public python-nu
+  (package
+    (name "python-nu")
+    (version "0.0.1")
+    (source (origin
+             (method git-fetch)
+             (uri (git-reference
+                   (url "https://github.com/ning-y/nu")
+                   (commit version)))
+             (file-name (git-file-name name version))
+             (sha256
+              (base32
+               "03mp0q0rzm6ybzm3fsf27v0ykqfhxjvgp6piis7qndjcxigvx21w"))))
+    (build-system python-build-system)
+    (propagated-inputs (list python-xdg ghostscript moreutils))
+    (home-page "https://github.com/ning-y/nu")
+    (synopsis "Assorted utilities for ning's personal use.")
+    (description "Assorted utilities for ning's personal use.")
     (license #f)))
