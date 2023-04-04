@@ -1,0 +1,19 @@
+#+title: ninguix
+
+A custom Guix channel.
+
+* Usage
+
+To pull from this channel, add the following into ~channels.scm~:
+
+#+begin_src scheme
+(channel
+  (name 'ninguix)
+  (url "https://github.com/ning-y/ninguix")
+  (branch "main")
+  (introduction
+    (make-channel-introduction
+      "3f7eb8b5064445d72649b1b27f714b86f3946a9a"
+      (openpgp-fingerprint
+        "4523 A758 035C 5177 7A8F  1E1F 2CB0 E8CD 7035 5FB7"))))
+#+end_src
